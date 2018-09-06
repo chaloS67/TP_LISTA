@@ -25,12 +25,12 @@ struct nodo {
     Nodo *anterior;
     Dato dato;
     Nodo *siguiente;
-} typedef Nodo;
+} typedef *Nodo;
 
 struct lista {
     int cantidadNodos;
     Nodo *primerNodo;
-} typedef Lista;
+} typedef *Lista;
 
 //N° 1
 // Precondición: Memoria disponible
@@ -60,7 +60,7 @@ int insertarNodoInicioDeLista(Lista listaIngresada, Nodo nuevoNodo);
 // Postcondición: Se agrega un nuevo nodo en la posicion indicada de la lista.
 int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo);
 
-//05
+// 05
 // Precondición:La lista tiene que ser válida y el nodo tiene que ser válido 
 // Entrada: Una lista y un nodo
 // Salida: Un boolean (True:El nodo fue insertado con exito al final de la lista / False:error en la insercion)
