@@ -47,7 +47,7 @@ int esListaVacia(Lista cabecera);
 // Entrada: Una lista y un nodo
 // Salida: Un boolean(True:El nodo fue insertado con éxito al principio de la lista/False:error en la inserción)
 // Postcondición:Se agrega un nuevo nodo al inicio de la lista.
-int insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
+void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
 
 // 4
 // Precondición:La lista tiene que ser válida, el nodo tiene que ser válido y la posición debe ser un entero positivo
@@ -55,7 +55,7 @@ int insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
 // Salida: Un boolean (True:El nodo fue insertado con exito en la posicion indicada / False:error en la insercion)
 // Postcondición: Se agrega un nuevo nodo en la posicion indicada de la lista.
 
-int insertarNodoEnPosicionLista(Lista cabecera, Nodo nuevoNodo, int posicion);
+void insertarNodoEnPosicionLista(Lista cabecera, Nodo nuevoNodo, int posicion);
 
 // 5
 // Precondición:La lista tiene que ser válida y el nodo tiene que ser válido 
