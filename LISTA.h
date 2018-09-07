@@ -59,7 +59,7 @@ int eliminarNodoInicioLista(Lista listaCabecera);
 // Entrada: Una lista y una posicion
 // Salida: Un boolean (TRUE:Si se borro un nodo FALSE : Si no se pudo borrar nodo
 // Postcondición: Se obtiene una copia del nodo que esta en la cabeza de la lista
-int eliminarNodoEnPosicionLista (lista listaCabecera, int posicion);
+int eliminarNodoEnPosicionLista (Lista listaCabecera, int posicion);
 
 //12
 // Precondición:La lista tiene que ser válida
