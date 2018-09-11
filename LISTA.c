@@ -177,3 +177,13 @@ bool eliminarNodoInicioLista (Lista *cabecera) {
         return true;
     }
 }
+
+// 10
+// Precondición:La lista tiene que ser válida y la posición debe ser un entero positivo
+// Entrada: Una lista y una posicion
+// Salida: Un boolean (TRUE:Si se borro un nodo FALSE : Si no se pudo borrar nodo
+// Postcondición: Se obtiene una copia del nodo que esta en la cabeza de la lista
+bool eliminarNodoEnPosicionLista (Lista cabecera, int posicion){
+
+
+}
