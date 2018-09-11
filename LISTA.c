@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "LISTA.h"
 
 // 04  
-// PrecondiciÛn:La lista tiene que ser v·lida, el nodo tiene que ser v·lido y la posiciÛn debe ser un entero positivo
-// Entrada: Una lista, un nodo y una posiciÛn
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida, el nodo tiene que ser vÔøΩlido y la posiciÔøΩn debe ser un entero positivo
+// Entrada: Una lista, un nodo y una posiciÔøΩn
 // Salida: Un boolean (True:El nodo fue insertado con exito en la posicion indicada / False:error en la insercion)
-// PostcondiciÛn: Se agrega un nuevo nodo en la posicion indicada de la lista.
-int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
+// PostcondiciÔøΩn: Se agrega un nuevo nodo en la posicion indicada de la lista.
+void inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
     if (posicion > (*cabecera)->cantidadNodos){
         //insertarNodoPosicionLista
     } else {
@@ -24,24 +25,24 @@ int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
 }
 
 // 05
-// PrecondiciÛn:La lista tiene que ser v·lida y el nodo tiene que ser v·lido 
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida y el nodo tiene que ser vÔøΩlido 
 // Entrada: Una lista y un nodo
 // Salida: Un boolean (True:El nodo fue insertado con exito al final de la lista / False:error en la insercion)
-// PostcondiciÛn: Se agrega un nuevo nodo en el final  de la lista.
+// PostcondiciÔøΩn: Se agrega un nuevo nodo en el final  de la lista.
 void insertarNodoFinalLista (Lista *cabecera, Nodo nuevoNodo){}
 
 // 06
-// PrecondiciÛn:La lista tiene que ser v·lida 
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida 
 // Entrada: Una lista
 // Salida: Un nodo False:error en la insercion)
-// PostcondiciÛn: Se obtiene una copia del nodo que esta en la cabeza de la lista
+// PostcondiciÔøΩn: Se obtiene una copia del nodo que esta en la cabeza de la lista
 Nodo leerNodoInicioLista(Lista cabecera){}
 
 // 07
-// PrecondiciÛn:La lista tiene que ser v·lida y la posiciÛn debe ser un entero positivo
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida y la posiciÔøΩn debe ser un entero positivo
 // Entrada: Una lista y una posicion
 // Salida: Una copia del nodo
-// PostcondiciÛn: Se obtiene una copia del nodo seg˙n la posicion
+// PostcondiciÔøΩn: Se obtiene una copia del nodo segÔøΩn la posicion
 Nodo leerNodoEnPosicionLista (Lista cabecera, int posicion) {
     if (esListaVacia(cabecera) == TRUE) {
         return NULL;
@@ -57,10 +58,10 @@ Nodo leerNodoEnPosicionLista (Lista cabecera, int posicion) {
 }
 
 // 08
-// PrecondiciÛn:La lista tiene que ser v·lida
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida
 // Entrada: Una lista
 // Salida: Una copia del nodo
-// PostcondiciÛn: Se obtiene una copia del nodo ultimo de la lista
+// PostcondiciÔøΩn: Se obtiene una copia del nodo ultimo de la lista
 Nodo leerNodoFinalLista (Lista cabecera) {
     if (esListaVacia(cabecera) == TRUE) {
         return NULL;
@@ -73,10 +74,10 @@ Nodo leerNodoFinalLista (Lista cabecera) {
 }
 
 // 09
-// PrecondiciÛn:La lista tiene que ser v·lida
+// PrecondiciÔøΩn:La lista tiene que ser vÔøΩlida
 // Entrada: Una lista
 // Salida: Un boolean (TRUE:si se pudo eliminar nodo. FALSE: Si no se pudo eliminar nodo)
-// PostcondiciÛn:La lista sin el nodo de la posciÛn dada.
+// PostcondiciÔøΩn:La lista sin el nodo de la posciÔøΩn dada.
 int eliminarNodoInicioLista (Lista *cabecera) {
     if (esListaVacia(*cabecera) == TRUE) {
         return FALSE;
@@ -94,4 +95,74 @@ int eliminarNodoInicioLista (Lista *cabecera) {
         (*cabecera)->cantidadNodos -= 1;
         return TRUE;
     }
+}
+
+// Precondici√≥n:La lista tiene que ser v√°lida y la posici√≥n debe ser un entero positivo
+// Entrada: Una lista y una posicion
+// Salida: Un boolean (TRUE:Si se borro un nodo FALSE : Si no se pudo borrar nodo
+// Postcondici√≥n: Se obtiene una copia del nodo que esta en la cabeza de la lista
+
+int eliminarNodoEnPosicionLista (Lista *cabecera ,int pos){
+    int i;
+    if (pos > cabecera-> cantidadNodos ){
+        return (FALSE);
+    }else{
+        Nodo anteriorNodo, auxNodo, siguienteNodo;
+        
+        anteriorNodo = lista-> primerNodo;
+        
+        for (i = 1; i < pos-1; i++) {
+            anteiorNodo = anteriorNodo-> siguiente;}
+        
+        auxNodo = anteriorNodo-> siguiente;
+        siguienteNodo= auxNodo-> siguiente;
+        free(auxNodo);
+        anteriorNodo ->siguiente = siguienteNodo;
+        siguienteNodo -> anterior = anteriorNodo;
+        cabecera->cantidadNodos = cabecera ->cantidadNodos -1;
+        return (TRUE);
+        }
+
+    }
+
+
+// Precondici√≥n:La lista tiene que ser v√°lida
+// Entrada: Una lista
+// Salida: Un boolean(True:Nodo eliminado/False:Nodo no encontrado) 
+// Postcondici√≥n: Se obtiene una copia del nodo seg√∫n la posicion
+int eliminarNodoFinalLista (Lista *cabecera){
+    if (esListaVacia(Lista cabecera)) {
+        return (FALSE);
+    }else{
+        Nodo primerNodo, ultimoNodo, auxNodo;
+        primerNodo = cabecera ->primerNodo;
+        auxNodo = primerNodo ->anterior;
+        ultimoNodo = auxNodo ->anterior;
+        
+        free (auxNodo);
+        
+        ultimoNodo ->siguiente = primerNodo ->anterior;
+        primerNodo ->anterior = ultimoNodo;
+        cabecera ->cantidadNodos = cabecera ->cantidadNodos -1;
+        return (TRUE);
+    }
+
+// Precondici√≥n:La lista tiene que ser v√°lida
+// Entrada: Una lista
+// Salida: Un boolean(True:Lista destruida) 
+// Postcondici√≥n: Se obtiene una copia del nodo seg√∫n la posicion
+    
+int destruirLista (Lista *cabecera){
+    if (esListaVacia(Lista cabecera)){
+        free(cabecera);
+        return (TRUE);
+    }else{
+        while (cabecera != NULL){
+            eliminarNodoInicioLista(cabecera)}
+        free (cabecera);
+        return(TRUE);}
+    }
+    
+  }
+
 }
