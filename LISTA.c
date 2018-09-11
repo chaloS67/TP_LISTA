@@ -159,7 +159,7 @@ Nodo leerNodoFinalLista (Lista cabecera) {
 // Entrada: Una lista
 // Salida: Un boolean (TRUE:si se pudo eliminar nodo. FALSE: Si no se pudo eliminar nodo)
 // Postcondición:La lista sin el nodo de la posción dada.
-int eliminarNodoInicioLista (Lista *cabecera) {
+bool eliminarNodoInicioLista (Lista *cabecera) {
     if (esListaVacia(*cabecera) == true) {
         return false;
     } else {
