@@ -85,7 +85,23 @@ int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
 // Entrada: Una lista y un nodo
 // Salida: Un boolean (True:El nodo fue insertado con exito al final de la lista / False:error en la insercion)
 // Postcondición: Se agrega un nuevo nodo en el final  de la lista.
-void insertarNodoFinalLista (Lista *cabecera, Nodo nuevoNodo){}
+void insertarNodoFinalLista (Lista *cabecera, Nodo nuevoNodo){
+    if(esListaVacia(*cabecera)== true){
+        insertarNodoInicioLista(*cabecera, nuevoNodo);
+    }else{
+        Nodo primerNodo, ultimoNodo;            // No son variables, SINO que referencias a los nodos de la lista
+
+        primerNodo = (*cabecera)->primerNodo;
+        ultimoNodo = primerNodo->anterior;
+        
+        nuevoNodo->siguiente = primerNodo;
+	nuevoNodo->anterior = ultimoNodo;
+	ultimoNodo->siguiente = nuevoNodo;
+	primerNodo->anterior = nuevoNodo;
+
+	(*cabecera)->cantidadNodos++;
+    }
+}
 
 // 06
 // Precondición:La lista tiene que ser válida 
