@@ -8,7 +8,7 @@
 // Salida: Un boolean (True:El nodo fue insertado con exito en la posicion indicada / False:error en la insercion)
 // Postcondición: Se agrega un nuevo nodo en la posicion indicada de la lista.
 int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
-    if (posicion > (*cabecera)->cantidadNodos){
+    if (posicion > (*cabecera).cantidadNodos){
         //insertarNodoPosicionLista
     } else {
         Nodo nodoAuxiliar;
@@ -18,7 +18,7 @@ int inserteNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
          * se va corriendo de uno en uno hasta la posicion deseada
          */
         for (i = 1; i < posicion-1 ; i++) {
-            nodoAuxiliar = (*nodoAuxiliar).siguiente;
+            nodoAuxiliar = nodoAuxiliar.siguiente;
         }
        
     }
@@ -86,11 +86,11 @@ int eliminarNodoInicioLista (Lista *cabecera) {
         auxNodo = (*cabecera)->primerNodo;
         primerNodo = auxNodo->siguiente;
         ultimoNodo = auxNodo->anterior;
-
-        free(auxNodo);
-
         primerNodo->anterior = ultimoNodo;
         ultimoNodo->siguiente = primerNodo;
+        
+        free(auxNodo);
+        
         cabecera->primerNodo = primerNodo;
         (*cabecera)->cantidadNodos -= 1;
         return true;
