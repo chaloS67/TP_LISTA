@@ -91,20 +91,27 @@ Nodo leerNodoFinalLista (Lista cabecera);
 // Entrada: Una lista
 // Salida: Un boolean (TRUE:si se pudo eliminar nodo. FALSE: Si no se pudo eliminar nodo)
 // Postcondición:La lista sin el nodo de la posción dada.
-int eliminarNodoInicioLista (Lista *cabecera);
+bool eliminarNodoInicioLista (Lista *cabecera);
 
 // 10
 // Precondición:La lista tiene que ser válida y la posición debe ser un entero positivo
 // Entrada: Una lista y una posicion
 // Salida: Un boolean (TRUE:Si se borro un nodo FALSE : Si no se pudo borrar nodo
 // Postcondición: Se obtiene una copia del nodo que esta en la cabeza de la lista
-int eliminarNodoEnPosicionLista (Lista cabecera, int posicion);
+bool eliminarNodoEnPosicionLista (Lista cabecera, int posicion);
 
-// 11
+//11
 // Precondición:La lista tiene que ser válida
 // Entrada: Una lista
-// Salida: Una copia del nodo 
-// Postcondición: Se obtiene una copia del nodo ultimo de la lista
-Nodo leerNodoFinalLista (Lista cabecera);
+// Salida: Un boolean(True:Nodo eliminado/False:Nodo no encontrado) 
+// Postcondición: Se obtiene una copia del nodo según la posicion
+bool eliminarNodoFinalLista(Lista cabecera);
+
+//12
+// Precondición:La lista tiene que ser válida
+// Entrada: Una lista
+// Salida: Un boolean(True:Lista destruida) 
+// Postcondición: Se obtiene una copia del nodo según la posicion
+bool destruirLista(Lista cabecera);
 
 #endif /* LISTA_H */
