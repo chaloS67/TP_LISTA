@@ -1,6 +1,44 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "LISTA.h"
+
+// 1
+// Precondición: Memoria disponible
+// Entrada:
+// Salida: Una lista
+// Postcondición: Se crea una lista en memoria
+Lista crearLista(){
+    Lista cabecera = malloc(sizeof(Lista));
+    
+    cabecera->primerNodo = NULL;
+    cabecera->cantidadNodos = 0;
+    
+    return cabecera;
+}
+
+// 2
+// Precondición:La lista tiene que ser válida
+// Entrada:Una lista
+// Salida:Un boolean(True:Está vacía/False:Contiene uno o más nodos)
+// Postcondición:Se determina si la lista está vacía o no
+
+int esListaVacia(Lista cabecera){
+
+   
+}
+
+// 3
+// Precondición:La lista tiene que ser válida y el nodo tiene que ser válido
+// Entrada: Una lista y un nodo
+// Salida: Un boolean(True:El nodo fue insertado con éxito al principio de la lista/False:error en la inserción)
+// Postcondición:Se agrega un nuevo nodo al inicio de la lista.
+void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
+
+
+
+
+
 
 // 04  
 // Precondición:La lista tiene que ser válida, el nodo tiene que ser válido y la posición debe ser un entero positivo
