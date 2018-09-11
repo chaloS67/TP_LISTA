@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=tp_lista_prueba
+PROJECTNAME=TP_LISTA
 
 # Active Configuration
 DEFAULTCONF=Debug

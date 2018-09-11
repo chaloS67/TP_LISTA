@@ -21,7 +21,7 @@ struct nodo {
 
 struct lista {
     int cantidadNodos;
-    Nodo *primerNodo;
+    Nodo primerNodo;
 } typedef *Lista;
 
 // 1
@@ -105,6 +105,6 @@ int eliminarNodoEnPosicionLista (Lista cabecera, int posicion);
 // Entrada: Una lista
 // Salida: Una copia del nodo 
 // Postcondición: Se obtiene una copia del nodo ultimo de la lista
-int leerNodoFinalLista (Lista cabecera);
+Nodo leerNodoFinalLista (Lista cabecera);
 
 #endif /* LISTA_H */
