@@ -44,7 +44,7 @@ Nodo leerNodoInicioLista(Lista cabecera){}
 // Salida: Una copia del nodo
 // Postcondición: Se obtiene una copia del nodo según la posicion
 Nodo leerNodoEnPosicionLista (Lista cabecera, int posicion) {
-    if (esListaVacia(cabecera) == true) {
+    if (posicion > cabecera.cantidadNodos) {
         return NULL;
     } else {
         int i;
