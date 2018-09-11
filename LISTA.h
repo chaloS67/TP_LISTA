@@ -45,7 +45,7 @@ bool esListaVacia(Lista cabecera);
 // Entrada: Una lista y un nodo
 // Salida: Un boolean(True:El nodo fue insertado con éxito al principio de la lista/False:error en la inserción)
 // Postcondición:Se agrega un nuevo nodo al inicio de la lista.
-void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
+void insertarNodoInicioLista(Lista *cabecera, Nodo nuevoNodo);
 
 // 4
 // Precondición:La lista tiene que ser válida, el nodo tiene que ser válido y la posición debe ser un entero positivo

@@ -37,17 +37,27 @@ bool esListaVacia(Lista cabecera){
 // Entrada: Una lista y un nodo
 // Salida: Un boolean(True:El nodo fue insertado con éxito al principio de la lista/False:error en la inserción)
 // Postcondición:Se agrega un nuevo nodo al inicio de la lista.
-void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo){
+void insertarNodoInicioLista(Lista *cabecera, Nodo nuevoNodo){
+    if(esListaVacia(*cabecera)== true){
+        (*cabecera)->cantidadNodos = 1;       
+        (*cabecera)->primerNodo = nuevoNodo;
+        nuevoNodo->anterior = nuevoNodo;
+        nuevoNodo->siguiente = nuevoNodo;
+    }else{
+        Nodo primerNodo, ultimoNodo;            // No son variables, SINO que referencias a los nodos de la lista
 
+        primerNodo = (*cabecera)->primerNodo;
+        ultimoNodo = primerNodo->anterior;
+        
+        nuevoNodo->siguiente = primerNodo;
+	nuevoNodo->anterior = ultimoNodo;
+	ultimoNodo->siguiente = nuevoNodo;
+	primerNodo->anterior = nuevoNodo;
 
-
+	(*cabecera)->primerNodo = nuevoNodo;
+	(*cabecera)->cantidadNodos++;
+    }
 }
-
-
-
-
-
-
 // 04  
 // Precondición:La lista tiene que ser válida, el nodo tiene que ser válido y la posición debe ser un entero positivo
 // Entrada: Una lista, un nodo y una posición
