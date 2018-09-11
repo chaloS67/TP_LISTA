@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "LISTA.h"
 
 // 04  
@@ -43,7 +44,7 @@ Nodo leerNodoInicioLista(Lista cabecera){}
 // Salida: Una copia del nodo
 // Postcondición: Se obtiene una copia del nodo según la posicion
 Nodo leerNodoEnPosicionLista (Lista cabecera, int posicion) {
-    if (esListaVacia(cabecera) == TRUE) {
+    if (esListaVacia(cabecera) == true) {
         return NULL;
     } else {
         int i;
@@ -62,7 +63,7 @@ Nodo leerNodoEnPosicionLista (Lista cabecera, int posicion) {
 // Salida: Una copia del nodo
 // Postcondición: Se obtiene una copia del nodo ultimo de la lista
 Nodo leerNodoFinalLista (Lista cabecera) {
-    if (esListaVacia(cabecera) == TRUE) {
+    if (esListaVacia(cabecera) == true) {
         return NULL;
     } else {
         Nodo auxNodo;
@@ -78,8 +79,8 @@ Nodo leerNodoFinalLista (Lista cabecera) {
 // Salida: Un boolean (TRUE:si se pudo eliminar nodo. FALSE: Si no se pudo eliminar nodo)
 // Postcondición:La lista sin el nodo de la posción dada.
 int eliminarNodoInicioLista (Lista *cabecera) {
-    if (esListaVacia(*cabecera) == TRUE) {
-        return FALSE;
+    if (esListaVacia(*cabecera) == true) {
+        return false;
     } else {
         Nodo primerNodo, ultimoNodo, auxNodo;
         auxNodo = (*cabecera)->primerNodo;
@@ -92,6 +93,6 @@ int eliminarNodoInicioLista (Lista *cabecera) {
         ultimoNodo->siguiente = primerNodo;
         cabecera->primerNodo = primerNodo;
         (*cabecera)->cantidadNodos -= 1;
-        return TRUE;
+        return true;
     }
 }
