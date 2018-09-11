@@ -14,15 +14,15 @@ struct dato {
 } typedef Dato;
 
 struct nodo {
-    Nodo *anterior;
+    struct nodo *anterior;
     Dato dato;
-    Nodo *siguiente;
-} typedef Nodo;
+    struct nodo *siguiente;
+} typedef *Nodo;
 
 struct lista {
     int cantidadNodos;
     Nodo *primerNodo;
-} typedef Lista;
+} typedef *Lista;
 
 // 1
 // Precondición: Memoria disponible
@@ -37,7 +37,7 @@ Lista crearLista();
 // Salida:Un boolean(True:Está vacía/False:Contiene uno o más nodos)
 // Postcondición:Se determina si la lista está vacía o no
 
-int esListaVacia(Lista cabecera);
+bool esListaVacia(Lista cabecera);
 
 
 // 3

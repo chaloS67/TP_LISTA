@@ -23,9 +23,13 @@ Lista crearLista(){
 // Salida:Un boolean(True:Está vacía/False:Contiene uno o más nodos)
 // Postcondición:Se determina si la lista está vacía o no
 
-int esListaVacia(Lista cabecera){
+bool esListaVacia(Lista cabecera){
 
-   
+    if(cabecera->cantidadNodos == 0 && cabecera->primerNodo == NULL){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 // 3
@@ -33,7 +37,11 @@ int esListaVacia(Lista cabecera){
 // Entrada: Una lista y un nodo
 // Salida: Un boolean(True:El nodo fue insertado con éxito al principio de la lista/False:error en la inserción)
 // Postcondición:Se agrega un nuevo nodo al inicio de la lista.
-void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo);
+void insertarNodoInicioLista(Lista cabecera, Nodo nuevoNodo){
+
+
+
+}
 
 
 
