@@ -108,7 +108,16 @@ void insertarNodoFinalLista (Lista *cabecera, Nodo nuevoNodo){
 // Entrada: Una lista
 // Salida: Un nodo False:error en la insercion)
 // Postcondición: Se obtiene una copia del nodo que esta en la cabeza de la lista
-Nodo leerNodoInicioLista(Lista cabecera){}
+Nodo leerNodoInicioLista(Lista cabecera){
+    if (esListaVacia(cabecera) == true) {
+        return NULL;
+    } else {
+        Nodo auxNodo;
+        auxNodo = cabecera->primerNodo;
+        return auxNodo;
+    }
+
+}
 
 // 07
 // Precondición:La lista tiene que ser válida y la posición debe ser un entero positivo
