@@ -8,6 +8,8 @@
 
 #ifndef LISTA_H
 #define LISTA_H
+#define TRUE 1
+#define FALSE 0
 
 struct dato {
     int dato;
