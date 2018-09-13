@@ -9,7 +9,10 @@
 #define LISTA_H
 
 struct dato {
-    int dato;
+    int id;
+    char nombreCompleto[];
+    char correoElectrico[];
+    long int telefono;
 } typedef Dato;
 
 struct nodo {
