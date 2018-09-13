@@ -7,11 +7,12 @@
 
 #ifndef LISTA_H
 #define LISTA_H
+#define CARACTERES_MAX 20
 
 struct dato {
     int id;
-    char nombreCompleto[];
-    char correoElectrico[];
+    char nombreCompleto[CARACTERES_MAX];
+    char correoElectrico[CARACTERES_MAX];
     long int telefono;
 } typedef Dato;
 
