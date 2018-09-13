@@ -247,3 +247,5 @@ bool destruirLista(Lista *cabecera){
     }
     return false;
 }
+
+
