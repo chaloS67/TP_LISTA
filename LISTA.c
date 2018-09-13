@@ -55,6 +55,7 @@ void insertarNodoInicioLista(Lista *cabecera, Nodo nuevoNodo){
 	(*cabecera)->cantidadNodos++;
     }
 }
+
 // 04  
 // Precondición:La lista tiene que ser válida, el nodo tiene que ser válido y la posición debe ser un entero positivo
 // Entrada: Una lista, un nodo y una posición
