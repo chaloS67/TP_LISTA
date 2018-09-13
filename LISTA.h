@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #define CARACTERES_MAX 20
+#define limpiar() while(getchar() != '\n')
 
 struct dato {
     int id;
@@ -57,7 +58,7 @@ void insertarNodoInicioLista(Lista *cabecera, Nodo nuevoNodo);
 // Entrada: Una lista, un nodo y una posición
 // Salida: Un boolean (True:El nodo fue insertado con exito en la posicion indicada / False:error en la insercion)
 // Postcondición: Se agrega un nuevo nodo en la posicion indicada de la lista.
-void insertarNodoEnPosicionLista(Lista cabecera, Nodo nuevoNodo, int posicion);
+void insertarNodoPosicionLista(Lista *cabecera, Nodo nuevoNodo, int posicion);
 
 // 05
 // Precondición:La lista tiene que ser válida y el nodo tiene que ser válido 
