@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
 #include "LISTA.h"
 
 // 01

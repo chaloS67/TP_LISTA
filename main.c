@@ -5,8 +5,8 @@
 int main(int argc, char** argv) {
     
     int opcion;
-    
-     do{
+    Lista cabezera;
+    do{
     puts("---------------MENU---------------");
     puts("1:Crear lista\n"
             "2:Saber si es lista vacia\n"
@@ -19,12 +19,23 @@ int main(int argc, char** argv) {
             "9:Eliminar nodo del inicio de lista\n"
             "10:Eliminar nodo en posicion de lista\n"
             "11:Eliminar nodo al final de la lista\n"
-            "12:Destruit lista\n0:SALIR");
+            "12:Destruit lista\n"
+            "0:SALIR");
     scanf("%d", &opcion);
     puts("----------------------------------");
     switch(opcion){
-    
-    
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
     }
     }while(opcion != 0);
     return (EXIT_SUCCESS);

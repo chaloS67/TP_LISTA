@@ -7,6 +7,9 @@
 
 #ifndef LISTA_H
 #define LISTA_H
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #define CARACTERES_MAX 20
 
 struct dato {
