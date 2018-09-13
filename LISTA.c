@@ -63,7 +63,7 @@ void insertarNodoInicioLista(Lista *cabecera, Nodo nuevoNodo){
 // Postcondición: Se agrega un nuevo nodo en la posicion indicada de la lista.
 void insertarNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
     if (posicion > (*cabecera)->cantidadNodos){
-        //insertarNodoPosicionLista
+        insertarNodoFinalLista(cabecera, nuevoNodo);
     } else {
         Nodo nodoAuxiliar;
         int i;
@@ -74,6 +74,12 @@ void insertarNodoPosicionLista (Lista *cabecera, Nodo nuevoNodo, int posicion) {
         for (i = 1; i < posicion-1 ; i++) {
             nodoAuxiliar = nodoAuxiliar->siguiente;
         }
+        nuevoNodo->siguiente = nodoAuxiliar->siguiente;
+        nuevoNodo->anterior = nodoAuxiliar;
+        nodoAuxiliar->siguiente = nuevoNodo;
+        nuevoNodo->siguiente->anterior = nuevoNodo;
+        (*cabecera)->cantidadNodos++;
+        
        
     }
 }
@@ -218,6 +224,7 @@ bool eliminarNodoFinalLista(Lista *cabecera){
     if (esListaVacia(*cabecera) == true) {
         return false;
     } else {
+        if((*cabecera)->cantidadNodos > 1){
         Nodo primerNodo, ultimoNodo, auxNodo;
         primerNodo = (*cabecera)->primerNodo;
         auxNodo = primerNodo->anterior;
@@ -226,7 +233,11 @@ bool eliminarNodoFinalLista(Lista *cabecera){
         free(auxNodo);
         ultimoNodo->siguiente = primerNodo;
         primerNodo->anterior = ultimoNodo;
-        (*cabecera)->cantidadNodos--;        
+        (*cabecera)->cantidadNodos--;
+        }else{
+            free((*cabecera)->primerNodo);
+    (*cabecera)->cantidadNodos = 0;
+        }    
     }
 }
 
