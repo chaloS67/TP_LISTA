@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include "LISTA.h"
 
+//DECLARACION DE FUNCIONES Y PROCEDIMIENTOS
 Nodo cargarDatosDeNodo();
 void menuInsertar(Lista *cabecera);
 void menuLecturaNodo(Lista cabecera);
 void menuEliminarNodo(Lista *cabecera);
 
+//MAIN
 int main(int argc, char** argv) {
     
     int opcion;
@@ -20,17 +22,19 @@ int main(int argc, char** argv) {
             "5:Eliminar nodo\n"
             "6:Destruit lista\n"
             "0:SALIR");
-    scanf("%d", &opcion);
     puts("----------------------------------");
+    scanf("%d", &opcion);
+    
     switch(opcion){
-        case 1:
+        case 1:  
             cabecera = crearLista();
+            puts("Lista creada");
             break;
-        case 2:
+        case 2: 
             if (esListaVacia(cabecera)) {
                 puts("Esta lista esta vacia.");
             } else {
-                printf("\nEsta lista contiene %d datos.\n", cabecera->cantidadNodos);
+                printf("\nEsta lista contiene %d dato(s).\n", cabecera->cantidadNodos);
             }
             break;
         case 3:
@@ -43,11 +47,16 @@ int main(int argc, char** argv) {
             menuEliminarNodo(&cabecera);
             break;
         case 6:
+            if(destruirLista(&cabecera) == true){
+                puts("Lista destruida");
+            }
             break;
     }
     }while(opcion != 0);
     return (EXIT_SUCCESS);
 }
+
+//FUNCIONES DEL MENU
 //CARGAR DATOS A UN NODO
 Nodo cargarDatosDeNodo(){
     

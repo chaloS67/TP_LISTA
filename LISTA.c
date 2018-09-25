@@ -179,6 +179,10 @@ bool eliminarNodoInicioLista (Lista *cabecera) {
         
         (*cabecera)->primerNodo = primerNodo;
         (*cabecera)->cantidadNodos--;
+        
+        if((*cabecera)->cantidadNodos == 0){
+            (*cabecera)->primerNodo = NULL;
+        }
         return true;
     }
 }
@@ -211,6 +215,9 @@ bool eliminarNodoEnPosicionLista (Lista *cabecera, int posicion){
         siguienteNodo->anterior = anteriorNodo;
         
         (*cabecera)->cantidadNodos--;
+        if((*cabecera)->cantidadNodos == 0){
+            (*cabecera)->primerNodo = NULL;
+        }
         return true;
     }
 }
@@ -235,8 +242,8 @@ bool eliminarNodoFinalLista(Lista *cabecera){
         primerNodo->anterior = ultimoNodo;
         (*cabecera)->cantidadNodos--;
         }else{
-            free((*cabecera)->primerNodo);
-    (*cabecera)->cantidadNodos = 0;
+            (*cabecera)->cantidadNodos = 0;
+            (*cabecera)->primerNodo = NULL;
         }    
     }
 }
@@ -251,7 +258,9 @@ bool destruirLista(Lista *cabecera){
         free(cabecera);
         return true;
     }else{
-        while(cabecera != NULL){
+        int i = 0;
+        
+        while(esListaVacia(*cabecera) == false){
             eliminarNodoInicioLista(cabecera);
         }
         free(cabecera);
